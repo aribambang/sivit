@@ -3,7 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Add Visits</title>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="content" style="width: 40%">
+      <h2>Add New Visit</h2>
+      <form action="/visits/create" method="POST">
+        <div>
+          <label for="VisitorId">Visitor</label><br />
+          <select name="VisitorId" id="VisitorId">
+            <% for(let i = 0; i < visitors.length; i++) { %>
+            <option value="<%= visitors[i].id %>">
+              <%= visitors[i].name %>
+            </option>
+            <% } %>
+          </select>
+        </div>
+        <div>
+          <label for="">Company</label><br />
+          <select name="CompanyId" id="CompanyId">
+            <% for(let i = 0; i < companies.length; i++) { %>
+            <option value="<%= companies[i].id %>">
+              <%= companies[i].name %>
+            </option>
+            <% } %>
+          </select>
+        </div>
+        <div>
+          <label for="">Purpose</label>
+          <input type="text" name="purpose" placeholder="e.g: interview" />
+        </div>
+        <div>
+          <input class="loginbtn" type="submit" name="Add" />
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

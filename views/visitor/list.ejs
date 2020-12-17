@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-  <title>List of Visitors</title>
-</head>
-<body>
-  <h2>List Of Visitor</h2>
-  <a href="/visitors/create">Add Visitors</a>
-  <table border = 1>
-    <tr>
-      <td>Id</td>
-      <td>Name</td>
-      <td>Phone Number</td>
-      <td>Email</td>
-      <td>Adress</td>
-      <td>Action</td>
-    </tr>
-    <% for(let i = 0; i< data.length; i++){ %>
-    <tr>
-      <td><%=data[i].id %></td>
-      <td><%=data[i].name %></td>
-      <td><%=data[i].phone_number %></td>
-      <td><%=data[i].email%></td>
-      <td><%=data[i].address%></td>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>List of Visitors</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="content">
+      <h2>List Of Visitor</h2>
+      <a href="/visitors/create">Add Visitors</a>
+      <table border="1" class="tables">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Adress</th>
+          <th>Action</th>
+        </tr>
+        <% for(let i = 0; i< data.length; i++){ %>
+        <tr>
+          <td><%=data[i].id %></td>
+          <td><%=data[i].name %></td>
+          <td><%=data[i].phone_number %></td>
+          <td><%=data[i].email%></td>
+          <td><%=data[i].address%></td>
 
-      <td><a href="/visitors/update/<%=data[i].id %>">Update</a> | <a href="/visitors/remove/<%=data[i].id %>">Delete</a></td>
-              
-   </tr>
-       <% } %>
-    </table>
-</body>
+          <td>
+            <a href="/visitors/update/<%=data[i].id %>">Update</a> |
+            <a href="/visitors/remove/<%=data[i].id %>">Delete</a>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </body>
 </html>

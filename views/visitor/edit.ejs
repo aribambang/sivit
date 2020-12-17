@@ -4,28 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Visitors</title>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <h2>Edit Visitors</h2>
-    <form action="/visitors/update/<%=id%>" method="POST">
-      <div>
-        <label for="">Name</label>
-        <input type="text" name = "name" value = "<%= data.name %>">
-      </div>
-      <div>
-        <label for="">Phone number</label>
-        <input type="text" name = "phone_number" value = "<%= data.phone_number %>">
-      </div>
-      <div>
-        <label for="">Email</label>
-        <input type="text" name = "email" value = "<%= data.email %>">
-      </div>
-      <div>
-        <label for="">Address</label>
-        <input type="text" name = "address" value = "<%= data.address %>">
-      </div>
-      <div>
-        <input type="submit" name ='Update Now' >
-      </div>
+    <%- include('../partials/navbar') %>
+    <div class="content" style="width: 40%">
+      <h2>Edit Visitors</h2>
+      <form action="/visitors/update/<%=id%>" method="POST">
+        <div>
+          <label for="">Name</label>
+          <input type="text" name="name" value="<%= data.name %>" />
+        </div>
+        <div>
+          <label for="">Phone number</label>
+          <input
+            type="text"
+            name="phone_number"
+            value="<%= data.phone_number %>"
+          />
+        </div>
+        <div>
+          <label for="">Email</label>
+          <input type="text" name="email" value="<%= data.email %>" />
+        </div>
+        <div>
+          <label for="">Address</label>
+          <input type="text" name="address" value="<%= data.address %>" />
+        </div>
+        <div>
+          <input class="loginbtn" type="submit" name="Update Now" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>

@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const middleware = require("../middlewares/authentication");
+
 const {
   list,
   create,
@@ -10,11 +12,11 @@ const {
   remove,
 } = require("../controllers/visitor");
 
-router.get("/", list);
-router.post("/create", create);
-router.get("/create", createForm);
-router.post("/update/:id_visitor", update);
-router.get("/update/:id_visitor", updateForm);
-router.get("/remove/:id_visitor", remove);
+router.get("/", middleware.authentication, list);
+router.post("/create", middleware.authentication, create);
+router.get("/create", middleware.authentication, createForm);
+router.post("/update/:id_visitor", middleware.authentication, update);
+router.get("/update/:id_visitor", middleware.authentication, updateForm);
+router.get("/remove/:id_visitor", middleware.authentication, remove);
 
 module.exports = router;
