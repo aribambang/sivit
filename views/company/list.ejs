@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>List of Companies</title>
+</head>
+<body>
+  <a href=""">Add Company</a>
+  <table border = 1>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Phone Number</td>
+      <td>Address</td>
+      <td>Action</td>
+    </tr>
+    <% for(let i = 0; i< data.length; i++){ %>
+    <tr>
+      <td><%=data[i].id %></td>
+      <td><%=data[i].name %></td>
+      <td><%=data[i].phone_number %></td>
+      <td><%=data[i].address%></td>
+      <td><a href="">Update</a> | <a href="">Delete</a></td>
+              
+   </tr>
+       <% } %>
+    </table>
+</body>
 </html>

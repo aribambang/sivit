@@ -1,6 +1,14 @@
-const { Company } = require("../models");
+const { Company } = require('../models/index')
 
-exports.list = (req, res) => {};
+exports.list = (req, res) => {
+ Company.findAll()
+  .then(data=>{
+   res.render('company/list', {data:data})
+ })
+  .catch(err=>{
+   res.send(err)
+ })
+};
 
 exports.create = (req, res) => {};
 
