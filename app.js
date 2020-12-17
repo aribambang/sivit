@@ -26,6 +26,6 @@ app.use("/companies", companyRoutes);
 app.use("/visitors", visitorRoutes);
 app.use("/visits", visitsRoutes);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`running on : http://localhost:${port}`);
 });
