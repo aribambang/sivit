@@ -1,0 +1,17 @@
+<div class="navbar">
+  <ul>
+    <li><a href="/dashboard">Home</a></li>
+    <li><a href="/visits">Visits</a></li>
+    <li><a href="/companies">Company</a></li>
+    <li><a href="/visitors">Visitor</a></li>
+    <li style="float: right" class="dropdown active">
+      <a href="javascript:void(0)" class="dropbtn" style="width: 165px"
+        ><%= session.name %>
+      </a>
+      <div class="dropdown-content">
+        <a href="/changePassword">Change Password</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </li>
+  </ul>
+</div>
