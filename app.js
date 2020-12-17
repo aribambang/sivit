@@ -11,8 +11,8 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", receiptionist);
-// app.use("/companies", companyRoutes);
-// app.use("/visitors", visitorRoutes);
+app.use("/companies", companyRoutes);
+app.use("/visitors", visitorRoutes);
 // app.use("/visits", visitsRoutes);
 
 app.listen(port, () => {
