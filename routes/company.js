@@ -10,11 +10,11 @@ const {
   remove,
 } = require("../controllers/company");
 
-router.get("/", list);
-router.post("/create", create);
-router.get("/create", createForm);
+router.get("/", list);//done
+router.post("/create", create);//done
+router.get("/create", createForm);//done
 router.post("/update/:id_company", update);
-router.get("/update", updateForm);
-router.post("/remove/:id_company", remove);
+router.get("/update/:id_company", updateForm);
+router.get("/remove/:id_company", remove);
 
 module.exports = router;

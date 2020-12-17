@@ -14,7 +14,7 @@ router.get("/", list);
 router.post("/create", create);
 router.get("/create", createForm);
 router.post("/update/:id_visitor", update);
-router.get("/update", updateForm);
-router.post("/remove/:id_visitor", remove);
+router.get("/update/:id_visitor", updateForm);
+router.get("/remove/:id_visitor", remove);
 
 module.exports = router;
