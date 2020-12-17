@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>List of Visits</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="content">
+      <h2>List Of Visits</h2>
+      <a class="loginbtn" href="/visits/create">Add Visits</a>
+      <a class="loginbtn" href="/visits/report">Report</a>
+      <br />
+      <br />
+      <table border="1" class="tables">
+        <tr>
+          <th>Id</th>
+          <th>Visitor</th>
+          <th>Company</th>
+          <th>Purpose</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Receptionist</th>
+          <th>Action</th>
+        </tr>
+        <% for(let i = 0; i< data.length; i++){ %> <% let formatStart = new
+        Date(data[i].start); let formatEnd = new Date(data[i].end); %>
+        <tr>
+          <td><%=data[i].id %></td>
+          <td><%=data[i].Visitor.name %></td>
+          <td><%=data[i].Company.name %></td>
+          <td><%=data[i].purpose%></td>
+          <td><%= moment(formatStart).format("DD-MM-YYYY HH:mm:ss") %></td>
+          <td>
+            <%= data[i].end === null ? '-' :
+            moment(formatEnd).format("DD-MM-YYYY HH:mm:ss") %>
+          </td>
+          <td><%=data[i].Receptionist.name%></td>
+          <td>
+            <a href="/visits/checkout/<%=data[i].id %>">Checkout</a> |
+            <a href="/visits/remove/<%=data[i].id %>">Delete</a>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </body>
+</html>
