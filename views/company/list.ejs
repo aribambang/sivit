@@ -6,7 +6,8 @@
   <title>List of Companies</title>
 </head>
 <body>
-  <a href=""">Add Company</a>
+  <h2>List Of Companies</h2>
+  <a href="/companies/create">Add Company</a>
   <table border = 1>
     <tr>
       <td>Id</td>
@@ -21,7 +22,7 @@
       <td><%=data[i].name %></td>
       <td><%=data[i].phone_number %></td>
       <td><%=data[i].address%></td>
-      <td><a href="">Update</a> | <a href="">Delete</a></td>
+      <td><a href="/companies/update/<%=data[i].id %>">Update</a> | <a href="/companies/remove/<%=data[i].id %>">Delete</a></td>
               
    </tr>
        <% } %>

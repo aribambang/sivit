@@ -5,5 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <h2>Update Company</h2>
+    <form action="/companies/update/<%=id%>" method="POST">
+      <div>
+        <label for="">Company Name</label>
+        <input type="text" name = "name" value = "<%= data.name %>">
+      </div>
+      <div>
+        <label for="">Phone number</label>
+        <input type="text" name = "phone_number" value = "<%= data.phone_number %>">
+      </div>
+      <div>
+        <label for="">Address</label>
+        <input type="text" name = "address" value = "<%= data.address %>">
+      </div>
+      <div>
+        <input type="submit" name ='Update Now' >
+      </div>
+  </body>
 </html>

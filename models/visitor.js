@@ -14,13 +14,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Visitor.init({
-    name: DataTypes.STRING,
-    phone_number: DataTypes.STRING,
-    email: DataTypes.STRING,
-    address: DataTypes.STRING
+    name: {type: DataTypes.STRING,validate: {
+      notEmpty:{args:true, msg:"name is required"}
+    }},
+    phone_number:{type: DataTypes.STRING,validate: {
+      notEmpty:{args:true, msg:"Phone number is required"}
+    }},
+    email: {type: DataTypes.STRING,validate: {
+      notEmpty:{args:true, msg:"Email is required"}
+    }},
+    address: {type: DataTypes.STRING,validate: {
+      notEmpty:{args:true, msg:"Address is required"}
+    }},
   }, {
     sequelize,
     modelName: 'Visitor',
   });
   return Visitor;
-};
+}; 
