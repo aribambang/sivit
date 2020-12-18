@@ -32,7 +32,7 @@ Make sure you have [Node.js](https://nodejs.org) installed on your machine. If y
 ## MVP
 
 <code><img width="30%" src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg"></code>
-<code><img width="50px" height="50px" src="https://assets.stickpng.com/images/58481018cef1014c0b5e494a.png"></code>
+<code><img width="50px" height="50px" src="https://avatars1.githubusercontent.com/u/4129662?s=280&v=4"></code>
 <code><img width="60px" height="50px" src="https://www.chartjs.org/media/logo-title.svg"></code>
 <code><img width="60px" height="50px" src="https://i1.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png"></code>
 
@@ -47,3 +47,7 @@ Make sure you have [Node.js](https://nodejs.org) installed on your machine. If y
 > | `GET` | `.../update/:id_visitor` | Get a update form by visitor id (id_visitor) |
 > | `POST` | `.../update/:id_visitor` | Update a visitor by visitor id (id_visitor) |
 > | `GET` | `.../remove/:id_visitor` | Delete a visitor by visitor id (id_visitor) |
+
+## Demo
+
+- visit [https://shrouded-beach-07754.herokuapp.com/](https://shrouded-beach-07754.herokuapp.com/)
